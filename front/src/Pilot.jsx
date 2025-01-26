@@ -91,18 +91,22 @@ function Pilot() {
             hour12: true
         });
     };
-    const temfix=(t)=>{
-        var t=Number(t)
-        var tt=t.toFixed(1)
-        
-            return tt
+    const temfix = (t) => {
+        var t = Number(t)
+        var tt = t.toFixed(1)
+
+        return tt
     }
 
 
     return (
         <div style={{ display: "flex" }}>
             <div className="mainp">
+
                 <div >
+                    <div style={{margin:'20px'}}>
+                        <img style={{ width: "200px", height: "auto",}} src="/20250127_002507.png" alt="" />
+                    </div>
                     <div className='for' style={{ display: 'flex', justifyContent: 'center' }}>
                         <Form onSubmit={searchL}>
                             <Row >
@@ -187,20 +191,20 @@ function Pilot() {
                 <div style={{ marginTop: '46px' }} className="scrollable-div">
                     {
                         [...KAdata].reverse().map((ka) => (
-                            <div key={ka._id} style={{ background: 'rgba(0, 0, 0, 0.5)', borderRadius: '30px', marginTop:'10px',padding:'10px' }}>
+                            <div key={ka._id} style={{ background: 'rgba(0, 0, 0, 0.5)', borderRadius: '30px', marginTop: '10px', padding: '10px' }}>
 
-                              
+
                                 <div>
-                                <h1 style={{ fontSize: '1rem' }}> <FaMapLocationDot />  {ka.place}</h1>
-                                
+                                    <h1 style={{ fontSize: '1rem' }}> <FaMapLocationDot />  {ka.place}</h1>
+
                                 </div>
                                 <div style={{ display: 'flex', alignItems: 'center', marginLeft: '20px' }}>
                                     <div style={{ marginRight: '20px' }}>
-                                        
+
                                         <h1 style={{ fontSize: '4rem' }}>{temfix(ka.temp)}°C</h1>
                                     </div>
-                                    <div style={{ transform: 'rotate(269deg)',color:'rgba(256,256,256,0.7)',marginLeft:'auto' }}>
-                                        <h1 style={{fontSize:'30px',}}>{ka.wcondition}</h1>
+                                    <div style={{ transform: 'rotate(269deg)', color: 'rgba(256,256,256,0.7)', marginLeft: 'auto' }}>
+                                        <h1 style={{ fontSize: '30px', }}>{ka.wcondition}</h1>
 
                                     </div>
                                 </div>
@@ -208,14 +212,14 @@ function Pilot() {
                                     {ka.description}
                                 </div>
                                 <div>
-                                <FaWind /> {ka.windspeed}
+                                    <FaWind /> {ka.windspeed}
                                 </div>
                                 <div>
-                                <WiHumidity /> {ka.humidity}
+                                    <WiHumidity /> {ka.humidity}
                                 </div>
-                                
 
-                                <div style={{fontSize:'15px',marginTop:'10px'}}>
+
+                                <div style={{ fontSize: '15px', marginTop: '10px' }}>
                                     <p>{formatDate(ka.createdAt)}</p>
                                 </div>
 
